@@ -93,3 +93,8 @@ resources:
   requests:
     cpu: 100m
     memory: 128Mi
+
+rookConfigOverride: |
+  [global]
+    osd crush update on start = false
+    osd pool default size = 2
