@@ -86,15 +86,9 @@ rgw:
       #   hosts:
       #     - chart-example.local
 
-resources:
-  limits:
-    cpu: 100m
-    memory: 128Mi
-  requests:
-    cpu: 100m
-    memory: 128Mi
-
-rookConfigOverride: |
-  [global]
-    osd crush update on start = false
-    osd pool default size = 2
+# Allows Ceph settings to be overridden
+# WARNING: Modify Ceph settings carefully. You are leaving the sandbox tested by Rook. Changing the settings could result in unhealthy daemons or even data loss if used incorrectly.
+# rookConfigOverride: |
+#   [global]
+#     osd crush update on start = false
+#     osd pool default size = 2
